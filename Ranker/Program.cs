@@ -15,11 +15,12 @@ Console.CancelKeyPress += (sender, e) =>
     e.Cancel = true;
     cancellationSource.Cancel();
 };
+IDataService _dataService = new DataService();
 
-var botToken = "";
+var botToken = _dataService.GetBotTokenAsync(); 
 
 var services = new ServiceCollection()
-    .AddDiscordGateway(_ => botToken)
+    .AddDiscordGateway(_ => botToken.Result)
     .AddResponder<PingPongResponder>()
     .AddResponder<MessageCounter>()
     .AddSingleton<IDataService, DataService>()

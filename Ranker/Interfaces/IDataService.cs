@@ -8,6 +8,7 @@ namespace Ranker.Interfaces
 {
     public interface IDataService
     {
-        Task<int> GetMemberMessageCount(ulong id);
+        Task<int> GetMemberMessageCountAsync(ulong id);
+        Task<string> GetBotTokenAsync();
     }
 }
