@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ranker.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,9 @@ namespace Ranker.Interfaces
 {
     public interface IDataService
     {
-        Task<int> GetMemberMessageCountAsync(ulong id);
+        int GetMemberMessageCount(ulong id);
         Task<string> GetBotTokenAsync();
+        Task<bool> CreateNewXmlDocumentAsync(Member member);
+        Task<bool> UpdateMemberMessageCountAsync(Member member);
     }
 }

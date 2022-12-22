@@ -8,8 +8,9 @@ namespace Ranker.Models
 {
     public class Member
     {
-        public ulong MemberId { get; set; }
+        public string? MemberId { get; set; }
         public string? Username  { get; set; }
+        public int Xp { get; set; }
         public int MessageCount { get; set; }
     }
 }
