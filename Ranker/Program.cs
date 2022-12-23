@@ -30,7 +30,9 @@ var services = new ServiceCollection()
 var gatewayClient = services.GetRequiredService<DiscordGatewayClient>();
 var log = services.GetRequiredService<ILogger<Program>>();
 
+Console.WriteLine("Ranker connected!");
 var runResult = await gatewayClient.RunAsync(cancellationSource.Token);
+
 
 if (!runResult.IsSuccess)
 {
